@@ -1,0 +1,23 @@
+﻿@model SimpleMedia.Dto.EditPostDto
+
+<h2>編輯貼文</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="PostID" />
+    <input type="hidden" asp-for="UserID" />
+
+    <div class="form-group">
+        <label asp-for="Content" class="control-label"></label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">儲存</button>
+    <a asp-action="Index" class="btn btn-secondary">取消</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

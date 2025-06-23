@@ -1,0 +1,45 @@
+﻿@model List<SimpleMedia.Dto.QueryPostDto>
+
+<h4>所有貼文</h4>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a href="/Post/Create">新增貼文</a>
+}
+
+@if (Model != null)
+{
+    @foreach (var post in Model)
+    {                <a href="/Post/Detail/@post.PostID" class="text-decoration-none text-dark">
+
+        <div class="card my-3 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="bi bi-person-circle"></i> @post.UserName
+                </h5>
+                <p class="card-text">
+                    @(
+                        post.Content.Length > 60 ? post.Content.Substring(0, 60) + "..." : post.Content
+                        )
+                </p>
+                <p class="text-muted small">
+                        上次更新時間：@post.LastMaintainDt.ToString("yyyy-MM-dd HH:mm:ss")
+                </p>
+                @if (User.Identity.Name == post.UserID)
+                {
+                    <div class="btn-group mt-2" role="group">
+                        <a href="/Post/Edit/@post.PostID" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-pencil-square"></i> 編輯
+                        </a>
+                        <form method="post" action="/Post/Delete/@post.PostID"
+                              onsubmit="return confirm('確定要刪除這篇貼文？');" style="display:inline;">
+                            <button type="submit" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-trash"></i> 刪除
+                            </button>
+                        </form>
+                    </div>
+                }
+            </div>
+        </div></a>
+    }
+}

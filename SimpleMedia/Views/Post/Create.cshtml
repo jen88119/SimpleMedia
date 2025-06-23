@@ -1,0 +1,16 @@
+﻿@model SimpleMedia.Entities.AccountInfo
+<div class="mb-3">
+    <button type="button" class="btn btn-outline-secondary" onclick="history.back()">
+        <i class="bi bi-arrow-left"></i> 回上一頁
+    </button>
+</div>
+<form action="/Post/Create" method="post" enctype="multipart/form-data" class="card p-3 shadow-sm mb-4">
+    <div class="mb-3">
+        <label for="Content" class="form-label"><strong>貼文內容</strong></label>
+        <textarea name="Content" id="Content" class="form-control" rows="4" placeholder="輸入你的貼文內容..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-pencil-square"></i> 送出貼文
+    </button>
+</form>
