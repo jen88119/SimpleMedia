@@ -19,7 +19,10 @@
 | 資料庫 | Entity Framework Core + SQL Server |
 | 雜湊加密 | SHA256 + Salt |
 
-## 預覽畫面 ![首頁](https://github.com/user-attachments/assets/50c5fd6f-760d-4f57-8ce6-50cbf498e5a7)![Detail](https://github.com/user-attachments/assets/994fbaf1-ca9c-4e0c-ba4c-497c84146455)
+## 預覽畫面
+![homePage](https://github.com/user-attachments/assets/9e820e2b-7bec-4c3c-9822-850f8b9f471f)
+![Detail](https://github.com/user-attachments/assets/c804db33-f02d-46b7-b155-9b35f00a0c46)
+
 
 
 
