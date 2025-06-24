@@ -4,7 +4,9 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <a href="/Post/Create">新增貼文</a>
+    <a href="/Post/Create" class="btn btn-outline-secondary">
+        新增貼文
+    </a>
 }
 
 @if (Model != null)
